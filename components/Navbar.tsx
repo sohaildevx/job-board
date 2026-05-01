@@ -36,17 +36,13 @@ export default function Navbar() {
                         </Link>
 
                         {isSignedIn ? (
-                            <div className="flex items-center space-x-3">
-                                <UserButton
-                                    afterSignOutUrl="/"
-                                    appearance={{
-                                        elements: {
-                                            avatarBox: "w-9 h-9",
-                                        },
-                                    }}
-                                />
-                                <SignOutButton />
-                            </div>
+                            <UserButton
+                                appearance={{
+                                    elements: {
+                                        avatarBox: "w-9 h-9",
+                                    },
+                                }}
+                            />
                         ) : (
                             <Link href={"/auth/sign-in"}>
                                 <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
@@ -58,18 +54,5 @@ export default function Navbar() {
                 </div>
             </div>
         </nav>
-    )
-}
-
-function SignOutButton() {
-    const { signOut } = useAuth()
-
-    return (
-        <button
-            onClick={() => signOut({ redirectUrl: "/" })}
-            className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors font-medium text-sm"
-        >
-            Sign Out
-        </button>
     )
 }
