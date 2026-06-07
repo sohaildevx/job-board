@@ -5,6 +5,7 @@ const isPublicRoute = createRouteMatcher([
   '/',
   '/auth(.*)',
   '/jobs(.*)',
+  '/api',
 ])
 
 const isAuthRoute = createRouteMatcher(['/auth(.*)'])
